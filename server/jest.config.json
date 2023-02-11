@@ -1,0 +1,10 @@
+{
+  "verbose": true,
+  "testURL": "http://localhost/",
+  "testRegex": "(/test/.*[.](test|spec))\\.(ts|tsx|js)$",
+  "testPathIgnorePatterns": [
+    "<rootDir>[/\\\\](dist|coverage|node_modules)[/\\\\]",
+    "_\\w*.\\w+$"
+  ],
+  "moduleFileExtensions": ["ts", "tsx", "js"]
+}

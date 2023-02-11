@@ -1,0 +1,38 @@
+{
+  "name": "project-uv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
+    "prettier": "2.5.0"
+  },
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install": "npm run install-server && npm run install-client",
+    "server": "npm run watch --prefix server",
+    "client": "npm start --prefix client",
+    "watch": "npm run server & npm run client",
+    "deploy": "npm run heroku-postbuild && npm start --prefix server",
+    "start": "npm start --prefix server",
+    "heroku-postbuild": "npm run build --prefix client --only=dev --no-shrinkwrap",
+    "test": "npm test --prefix server && npm test --prefix client",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/pranta-barua007/project-uv/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/pranta-barua007/project-uv/issues"
+  },
+  "homepage": "https://gitlab.com/pranta-barua007/project-uv/"
+}

@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "watch": "nodemon src/server.js",
+    "start": "npm run cluster",
+    "test": "jest --config ./jest.config.json",
+    "test-cluster": "pm2 start src/server.js -i max",
+    "cluster": "pm2-runtime start ecosystem.config.js --env production",
+    "list-cluster": "pm2 list",
+    "delete-cluster": "pm2 delete all",
+    "heroku-postbuild": "npm install --only=prod --no-shrinkwrap"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-sslify": "^1.2.0",
+    "geoip-lite": "^1.4.5",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.12",
+    "morgan": "^1.10.0",
+    "pm2": "^5.2.0",
+    "stripe": "^8.219.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15"
+  }
+}
